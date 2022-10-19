@@ -23,7 +23,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int index;
 
 	va_start(strings, n);
-<<<<<<< HEAD
 
 	for (index = 0; index < n; index++)
 	{
@@ -38,7 +37,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("%s", separator);
 	}
 
-=======
 	for (index = 0; index < n; index++)
 	{
 	str = va_arg(strings, char *);
@@ -49,7 +47,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	if (index != (n - 1) && separator != NULL)
 	printf("%s", separator);
 	}
->>>>>>> 76b89d345f8c867db89c2867a8671771cec8e66f
+
 	printf("\n");
 
 	va_end(strings);
