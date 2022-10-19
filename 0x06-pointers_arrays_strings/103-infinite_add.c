@@ -9,13 +9,19 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r);
  * @n2: The string containing the second number to be added.
  * @r: The buffer to store the result.
  * @r_index: The current index of the buffer.
+<<<<<<< HEAD
  *
  * Return: If r can store the sum - a pointer to the result.
  *         If r cannot store the sum - 0.
+=======
+ * Return: If r can store the sum - a pointer to the result.
+ * If r cannot store the sum - 0.
+>>>>>>> 76b89d345f8c867db89c2867a8671771cec8e66f
  */
 
 char *add_strings(char *n1, char *n2, char *r, int r_index)
 {
+<<<<<<< HEAD
 	int num, tens = 0;
 
 	for (; *n1 && *n2; n1--, n2--, r_index--)
@@ -50,6 +56,48 @@ char *add_strings(char *n1, char *n2, char *r, int r_index)
 		return (0);
 
 	return (r + r_index + 1);
+=======
+		int num, tens = 0;
+
+		for (; *n1 && *n2; n1--, n2--, r_index--)
+
+		{
+			num = (*n1 - '0') + (*n2 - '0');
+			num += tens;
+			*(r + r_index) = (num % 10) + '0';
+			tens = num / 10;
+		}
+
+		for (; *n1; n1--, r_index--)
+		{
+			num = (*n1 - '0') + tens;
+
+			*(r + r_index) = (num % 10) + '0';
+			tens = num / 10;
+
+		}
+
+		for (; *n2; n2--, r_index--)
+
+		{
+			num = (*n2 - '0') + tens;
+			*(r + r_index) = (num % 10) + '0';
+			tens = num / 10;
+
+		}
+
+		if (tens && r_index >= 0)
+		{
+			*(r + r_index) = (tens % 10) + '0';
+			return (r + r_index);
+
+		}
+
+		else if (tens && r_index < 0)
+			return (0);
+
+		return (r + r_index + 1);
+>>>>>>> 76b89d345f8c867db89c2867a8671771cec8e66f
 }
 /**
  * infinite_add - Adds two numbers.
@@ -57,9 +105,14 @@ char *add_strings(char *n1, char *n2, char *r, int r_index)
  * @n2: The second number to be added.
  * @r: The buffer to store the result.
  * @size_r: The buffer size.
+<<<<<<< HEAD
  *
  * Return: If r can store the sum - a pointer to the result.
  *         If r cannot store the sum - 0.
+=======
+ * Return: If r can store the sum - a pointer to the result.
+ * If r cannot store the sum - 0.
+>>>>>>> 76b89d345f8c867db89c2867a8671771cec8e66f
  */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
